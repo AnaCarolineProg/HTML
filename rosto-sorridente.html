@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Rosto sorridente</title>
+		<style>
+			canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="tela" width="150" height="150"></canvas>
+		<canvas id="tela2" width="300" height="300"></canvas>
+		<script>
+			var tela = document.getElementById("tela");
+		
+			var c = tela.getContext("2d");
+			
+			c.beginPath();
+			c.arc(75,75,50,0,Math.PI*2, true);
+			c.moveTo(110,75)
+			c.arc(75,75,35,0,Math.PI, false);
+			c.moveTo(65,65)
+			c.arc(60,65,5,0,Math.PI*2, true);
+			c.moveTo(95,65)
+			c.arc(90,65,5,0,Math.PI*2, true);
+			c.stroke();
+			
+			var novo = document.getElementById("tela2")
+			
+			var p = novo.getContext("2d")
+			
+			//triângulo preenchido
+			p.beginPath();
+			p.moveTo(25,25);
+			p.lineTo(105,25);
+			p.lineTo(25,105);
+			p.fill();
+			
+			//triângulo stroke
+			p.beginPath();
+			p.moveTo(125,125);
+			p.lineTo(125,45);
+			p.lineTo(45,125);
+			p.closePath();
+			p.stroke();
+		</script>
+	</body>
+</html>

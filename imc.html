@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática do dia-a-dia</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<style>
+		body {
+			text-align: center;
+			color: blue;
+			background-color: pink;
+		}
+		
+	</style>
+</head>
+<body>
+  
+    <h2>Índice de Massa Corporal (IMC)</h2>
+	<p>
+		IMC é a sigla para <strong>Índice de Massa Corpórea</strong>,
+		parâmetro adotado pela Organização Mundial de Saúde
+		para calcular o peso ideal de cada pessoa.
+	</p>
+	<p>
+		Diz-se que o indivíduo tem <i>peso normal</i>
+		quando o resultado do IMC está entre 18,5 e 24,9.
+	</p>
+    <hr>
+    <script>
+        function pulaLinha(){
+            document.write("<br><hr><br>")
+        }
+        function mostra(frase){
+            document.write(frase)
+            pulaLinha()
+        }
+        function calculaIMC(altura, peso){
+            var imc = peso/ (altura*altura)
+            return imc
+        }
+        var nome = prompt("Digite seu nome: (ou como gosta de ser chamado(a))")
+        var peso = prompt(nome+", qual é o seu peso?")
+        var altura = prompt("E sua altura?")
+        var imc = calculaIMC(altura, peso)
+        mostra(nome+" seu imc é "+Math.round(imc))
+        
+        if(imc<18.5){
+			mostra("Seu IMC indica que você está ABAIXO do peso.")
+		}
+		if(imc>18.5 && imc<=24.9){
+			mostra("Seu IMC indica que você está com o peso considerado NORMAL.")
+		}
+		if(imc>=25 && imc<=29.9){
+			mostra("Seu IMC indica SOBREPESO.")	
+		}
+		if(imc>=30 && imc<=39.9){
+			mostra("Seu IMC indica OBESIDADE.")
+		}
+		if(imc>40){
+			mostra("ALERTA! Seu IMC indica obesidade grave!")
+		}
+    </script>
+	<footer>
+		<p>
+			<i>&copy; Ana Caroline Ferreira. 2023</i>
+		</p>
+	</footer>
+</body>
+</html>

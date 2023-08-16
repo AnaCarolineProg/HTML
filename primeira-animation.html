@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Minha primeira animação</title>
+</head>
+<body>
+	<canvas id="meu-canvas" width="500" height="300"></canvas>
+	<script>
+		const tela = document.getElementById('meu-canvas')
+		const c = tela.getContext('2d')
+		
+		var x = 50
+		const dx = 5
+		const y = tela.height/2
+		const radius = 30
+		
+		function desenharCirculo(){
+			c.beginPath()
+			c.arc(x, y, radius, 0, Math.PI*2)
+			c.fillStyle= 'blue'
+			c.fill()
+			c.closePath()
+		}
+		function atualizaCirculo(){
+			x+= dx
+		}
+		function animarCirculo(){
+		//Limpar o canvas antes de desenhar o círculo novamente
+		c.clearRect(0, 0, tela.width, tela.height)
+		
+		desenharCirculo()
+		atualizaCirculo()
+		
+		//Chamar novamente a função animarCirculo a cada atualização
+		requestAnimationFrame(animarCirculo)
+		}
+		animarCirculo()
+	</script>
+</body>
+</html>

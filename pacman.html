@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Pacman</title>
+	</head>
+	<body>
+	<canvas id="tela" width="450" height="450"></canvas>
+	<script>
+		var tela = document.getElementById("tela")
+		var c = tela.getContext("2d")
+
+		c.fillStyle = "yellow"
+		//parte de cima
+		c.beginPath()
+		c.arc(150,150,60,Math.PI-0.5,Math.PI*2-0.5)
+		c.fill()
+		
+		//parte de baixo
+		c.beginPath()
+		c.arc(150,150,60,0.5,Math.PI+0.5)
+		c.fill()
+		
+		//olhos
+		c.fillStyle = "black"
+		c.beginPath()
+		c.arc(156,120,6,0,Math.PI+0.5)
+		c.fill()
+		
+		
+	</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Média idades</title>
+	</head>
+	<body>
+		<script>
+		function pulaLinha(){
+		document.write("<br><hr>")
+		}
+		var totalFamiliares = Number(prompt("Quantos famliares são?"))
+		var soma = 0
+		
+		for(n=1;n<=totalFamiliares;n++){
+			var idade = Number(prompt("Qual é a idade?"))
+			document.write(idade)
+			pulaLinha()
+			soma += idade
+		}
+		var media = soma/totalFamiliares
+		document.write("A soma das idades é: "+soma)
+		pulaLinha()
+		document.write("A média das idades é: "+ parseInt(media))
+		</script>
+	</body>
+</html>

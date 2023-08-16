@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Jogo de advinhação</title>
+	<style>
+		body{
+			background-color: red;
+			color: white;
+		}
+	</style>
+</head>
+	<body>
+	<script>
+		function pulaLinha(){
+			document.write("<br><hr><br>")
+			}
+		function mostra(frase){
+			document.write(frase)
+			pulaLinha()
+		}
+		function sorteia(numero){
+			return Math.round(Math.random()*numero)
+		}
+		
+		var numeroPensado = sorteia(10)
+		var chute = prompt("Pensei em um número de 0 a 10. Qual você acha que é?")
+		
+		if(chute==numeroPensado){
+			mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado)
+		}
+		if(chute!= numeroPensado){
+			if(chute>numeroPensado){
+				mostra("Você errou, era um número MENOR! Eu tinha pensado no "+numeroPensado)
+			}else{
+				mostra("Você errou, era um número MAIOR! Eu tinha pensado no "+numeroPensado)
+			}
+		}
+		if(isNaN(chute)){
+			mostra("<i>apenas números são válidos.</i>")
+		}
+		
+	</script>
+	</body>
+</html>

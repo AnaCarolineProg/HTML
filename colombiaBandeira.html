@@ -1,0 +1,27 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Bandeira Colômbia</title>
+		<style>
+			body{
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+	<canvas id="tela" width="600" height="400"></canvas>
+	<script>
+		var tela = document.getElementById("tela")
+		var c = tela.getContext("2d")
+		
+		c.fillStyle="yellow"
+		c.fillRect(0,0,600,200)
+		c.strokeRect(0,0,600,400)
+		c.fillStyle="blue"
+		c.fillRect(0,200,600,100)
+		c.fillStyle="darkred"
+		c.fillRect(0,300,600,100)
+		
+	</script>
+	</body>
+</html>  

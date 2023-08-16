@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Jogo Advinha</title>
+		<style>
+		body{
+			background-color: red;
+			color: white;
+		}
+	</style>
+	</head>
+	<body>
+		<script>
+		function pulaLinha(){
+			document.write("<br><hr><br>")
+		}
+		function mostra(frase){
+			document.write(frase)
+			pulaLinha()
+		}
+		var numeroPensado = Math.round(Math.random()*100)
+		numeroDaTentativa = 1
+		
+		alert("Já pensei em um número de 1 a 100!")
+		
+		while(true){
+			var chute = prompt("Qual número você acha que é?")
+			if(chute==numeroPensado){
+				alert("Parabéns, você acertou! Era o "+chute)
+				break
+			}if(chute>numeroPensado){
+				alert("Errou, é um número MENOR do que "+chute)
+			}
+			if (chute<numeroPensado){
+				alert("Errou, é um número MAIOR do que "+chute)
+			}
+			if(isNaN(chute)){
+				alert("apenas números são aceitos!")
+			}
+			numeroDaTentativa++
+		}
+		mostra("O número que pensei era: "+numeroPensado)
+		mostra("Você tentou "+numeroDaTentativa+" vezes.")
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Dados vitais</title>
+</head>
+<body>
+    <script>
+        function pulaLinha(){
+            document.write("<br><hr><br>")
+        }
+        var nome = prompt("Qual seu nome?")
+        var idade = prompt(nome+", quantos anos você tem?")
+        var dias = idade*365
+        document.write("Você já viveu "+dias+" dias de vida")
+        pulaLinha()
+        var batimentos = dias*24*60*80
+        document.write("Seu coração já bateu " +batimentos+" de vezes. Haja coração!")
+    </script>
+</body>
+</html>

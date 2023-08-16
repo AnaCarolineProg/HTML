@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<title>Pontos de futebol</title>
+</head>
+<body>
+	<script>
+		function pulaLinha(){
+			document.write("<br><hr><br>")
+		}
+		function mostra(frase){
+			document.write(frase)
+			pulaLinha
+		}
+		function calculaPontos(vitorias, empates, derrotas){
+			return ((vitorias*3)+empates)-derrotas
+		}
+		var vitorias = parseInt(prompt("Quantos jogos o CDC FC venceu?"))
+		var empates = parseInt(prompt("Quantos jogos o CDC FC empatou?"))
+		var derrotas = parseInt(prompt("Quantas vezes CDC perdeu?"))
+		var pontosCDC = calculaPontos(vitorias, empates, derrotas)
+		var vitorias = parseInt(prompt("Quantas vitórias o Livros Velhos tem?"))
+		var empates = parseInt(prompt("Quantos empates o Livros Velhos tem?"))
+		var derrotas = parseInt(prompt("Quantas vezes LV FC perdeu?"))
+		var pontosLV = calculaPontos(vitorias, empates, derrotas) 
+		mostra("Nosso time tem "+pontosCDC+" pontos!")
+		pulaLinha()
+		mostra("Os Livros Velhos possui "+pontosLV+" pontos.")
+		pulaLinha()
+		
+		if(pontosCDC>pontosLV){
+			mostra("Nosso time está indo MELHOR que o Livros Velhos!")
+		} else if(pontosCDC<pontosLV){
+			mostra("O time precisa melhorar!")
+		}else{
+			mostra("Estamos empatados com o Livros Velhos!!")
+		}
+	</script>
+</body>
+</html>

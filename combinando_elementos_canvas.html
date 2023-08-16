@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Arcos</title>
+	</head>
+	<body>
+	<canvas id="tela" width="450" height="600"></canvas>
+	<script>
+		var tela = document.getElementById("tela")
+		var c = tela.getContext("2d")
+		
+		for(i=0;i<4;i++){
+			for(j=0;j<3;j++){
+				c.beginPath()
+				var x = 75+j*150
+				var y = 75+i*150
+				var radius = 60
+				var startAngle = 0
+				var endAngle = Math.PI+(Math.PI*j)/2
+				var anticlockwise = i%2==0 ? false:true;
+				
+				c.arc(x,y,radius,startAngle,endAngle,anticlockwise)
+				if(i>1){
+					c.fill()
+				}
+				else{
+					c.stroke()
+				}
+			}
+		}
+	
+	</script>
+	</body>
+</html>  

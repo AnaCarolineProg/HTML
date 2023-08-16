@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Desenhando figuras</title>
+		<style>
+			canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="tela" width="150" height="150"></canvas>
+		<script>
+			var tela = document.getElementById("tela")
+			var c = tela.getContext("2d") //getContext é um método para contexto de renderização
+			
+			c.fillStyle = "rgb(200,0,0)"
+			c.fillRect (10,10,55,50)
+			
+			c.fillStyle = "rgba(0,0,200,0.5)"
+			c.strokeRect(30,30,55,50)
+			
+			c.fillStyle = "rgb(0,42,100,200)"
+			c.beginPath()
+			c.moveTo(75,50)
+			c.lineTo(100,75)
+			c.lineTo(100,25)
+			c.fill()
+		</script>
+	</body>
+</html>	

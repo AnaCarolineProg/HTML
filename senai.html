@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas SENAI</title>
+  <style>
+    /* Estilos gerais para o layout */
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    /* Estilos para o contêiner que utiliza flexbox */
+    #canvasContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 300px;
+    }
+    /* Estilos para o título */
+    #title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #005493; /* Cor azul do SENAI */
+    }
+    /* Estilos para o conteúdo */
+    #content {
+      font-size: 18px;
+      color: #333; /* Cor do texto padrão */
+    }
+    /* Estilos para o canvas */
+    #canvas {
+      border: 2px solid #005493; /* Borda azul ao redor do canvas */
+    }
+  </style>
+</head>
+<body>
+  <div id="canvasContainer">
+    <!-- Título -->
+    <div id="title">SENAI</div>
+    <!-- Conteúdo -->
+    <div id="content">Seu conteúdo aqui...</div>
+    <!-- Canvas -->
+    <canvas id="canvas" width="200" height="100"></canvas>
+  </div>
+  <script>
+     // Função para desenhar a logo do SENAI no canvas
+  function drawSENAI() {
+    // Obtém o elemento canvas do documento
+    const canvas = document.getElementById("canvas");
+    // Obtém o contexto de desenho 2D do canvas
+    const ctx = canvas.getContext("2d");
+  
+    // Substitua a URL da imagem abaixo pela URL da logo do SENAI
+    const logoURL = "https://www.ufrgs.br/neo/wp-content/uploads/2019/11/logomarca-oficial-SENAI.jpg";
+  
+    // Cria um objeto de imagem
+    const img = new Image();
+  
+    // Define a fonte da imagem como a URL da logo do SENAI
+    img.src = logoURL;
+  
+    // Aguarda o carregamento da imagem antes de desenhá-la no canvas
+    img.onload = () => {
+      // Desenha a imagem no canvas (x, y, largura, altura)
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    };
+  }
+  
+  // Chama a função para desenhar a logo do SENAI no canvas
+  drawSENAI();
+  </script>
+</body>
+</html>
